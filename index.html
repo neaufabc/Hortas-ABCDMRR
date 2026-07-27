@@ -49,11 +49,11 @@
         <script src="data/OleodutosRegABCDRMM_8.js"></script>
         <script src="data/TerrasIndgenasnoestadodeSoPaulo_9.js"></script>
         <script src="data/LimitesdosMunicpiosABCDMRR_10.js"></script>
-        <script src="data/HortasemRioGrandedaSerra16_11.js"></script>
+        <script src="data/HortasemRioGrandedaSerra19_11.js"></script>
         <script src="data/HortasemRibeiroPires16_12.js"></script>
         <script src="data/HortasemMau64_13.js"></script>
         <script src="data/HortasemDiadema80_14.js"></script>
-        <script src="data/HortasemSoCaetanodoSul17_15.js"></script>
+        <script src="data/HortasemSoCaetanodoSul20_15.js"></script>
         <script src="data/HortasemSoBernardodoCampo60_16.js"></script>
         <script src="data/HortasemSantoAndr212_17.js"></script>
         <script>
@@ -64,9 +64,9 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-23.95446287605937,-46.86784015952368],[-23.55988260276123,-46.08314869287903]]);
+        }).fitBounds([[-23.641057575573022,-46.57665546705555],[-23.291683078103393,-45.92296476969356]]);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
@@ -326,7 +326,7 @@
                 pane: 'pane_InventrioFlorestal2020_4',
                 stroke: false, 
                 fill: true,
-                fillOpacity: 0.4,
+                fillOpacity: 1,
                 fillColor: 'rgba(92,195,104,1.0)',
                 interactive: false,
             }
@@ -383,7 +383,7 @@
                 lineJoin: 'miter',
                 weight: 1, 
                 fill: true,
-                fillOpacity: 0.4,
+                fillOpacity: 1,
                 fillColor: 'rgba(178,198,140,1.0)',
                 interactive: false,
             }
@@ -917,7 +917,7 @@
         });
         bounds_group.addLayer(layer_LimitesdosMunicpiosABCDMRR_10);
         map.addLayer(layer_LimitesdosMunicpiosABCDMRR_10);
-        function pop_HortasemRioGrandedaSerra16_11(feature, layer) {
+        function pop_HortasemRioGrandedaSerra19_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -938,9 +938,6 @@
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -954,38 +951,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemRioGrandedaSerra16_11_0() {
+        function style_HortasemRioGrandedaSerra19_11_0() {
             return {
-                pane: 'pane_HortasemRioGrandedaSerra16_11',
+                pane: 'pane_HortasemRioGrandedaSerra19_11',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemRioGrandedaSerra16_11.svg',
-            iconSize: [15.2, 15.2]
+            iconUrl: 'markers/HortasemRioGrandedaSerra19_11.svg',
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemRioGrandedaSerra16_11');
-        map.getPane('pane_HortasemRioGrandedaSerra16_11').style.zIndex = 411;
-        map.getPane('pane_HortasemRioGrandedaSerra16_11').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemRioGrandedaSerra16_11 = new L.geoJson(json_HortasemRioGrandedaSerra16_11, {
+        map.createPane('pane_HortasemRioGrandedaSerra19_11');
+        map.getPane('pane_HortasemRioGrandedaSerra19_11').style.zIndex = 411;
+        map.getPane('pane_HortasemRioGrandedaSerra19_11').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemRioGrandedaSerra19_11 = new L.geoJson(json_HortasemRioGrandedaSerra19_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemRioGrandedaSerra16_11',
-            layerName: 'layer_HortasemRioGrandedaSerra16_11',
-            pane: 'pane_HortasemRioGrandedaSerra16_11',
-            onEachFeature: pop_HortasemRioGrandedaSerra16_11,
+            dataVar: 'json_HortasemRioGrandedaSerra19_11',
+            layerName: 'layer_HortasemRioGrandedaSerra19_11',
+            pane: 'pane_HortasemRioGrandedaSerra19_11',
+            onEachFeature: pop_HortasemRioGrandedaSerra19_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemRioGrandedaSerra16_11_0(feature));
+                return L.marker(latlng, style_HortasemRioGrandedaSerra19_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemRioGrandedaSerra16_11);
-        map.addLayer(layer_HortasemRioGrandedaSerra16_11);
+        bounds_group.addLayer(layer_HortasemRioGrandedaSerra19_11);
+        map.addLayer(layer_HortasemRioGrandedaSerra19_11);
         function pop_HortasemRibeiroPires16_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -1005,9 +1002,6 @@
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1030,7 +1024,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/HortasemRibeiroPires16_12.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
@@ -1076,9 +1070,6 @@
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -1099,7 +1090,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/HortasemMau64_13.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
@@ -1145,9 +1136,6 @@
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -1168,7 +1156,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/HortasemDiadema80_14.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
@@ -1193,7 +1181,7 @@
         });
         bounds_group.addLayer(layer_HortasemDiadema80_14);
         map.addLayer(layer_HortasemDiadema80_14);
-        function pop_HortasemSoCaetanodoSul17_15(feature, layer) {
+        function pop_HortasemSoCaetanodoSul20_15(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1214,9 +1202,6 @@
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -1230,38 +1215,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemSoCaetanodoSul17_15_0() {
+        function style_HortasemSoCaetanodoSul20_15_0() {
             return {
-                pane: 'pane_HortasemSoCaetanodoSul17_15',
+                pane: 'pane_HortasemSoCaetanodoSul20_15',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemSoCaetanodoSul17_15.svg',
-            iconSize: [15.2, 15.2]
+            iconUrl: 'markers/HortasemSoCaetanodoSul20_15.svg',
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemSoCaetanodoSul17_15');
-        map.getPane('pane_HortasemSoCaetanodoSul17_15').style.zIndex = 415;
-        map.getPane('pane_HortasemSoCaetanodoSul17_15').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemSoCaetanodoSul17_15 = new L.geoJson(json_HortasemSoCaetanodoSul17_15, {
+        map.createPane('pane_HortasemSoCaetanodoSul20_15');
+        map.getPane('pane_HortasemSoCaetanodoSul20_15').style.zIndex = 415;
+        map.getPane('pane_HortasemSoCaetanodoSul20_15').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemSoCaetanodoSul20_15 = new L.geoJson(json_HortasemSoCaetanodoSul20_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemSoCaetanodoSul17_15',
-            layerName: 'layer_HortasemSoCaetanodoSul17_15',
-            pane: 'pane_HortasemSoCaetanodoSul17_15',
-            onEachFeature: pop_HortasemSoCaetanodoSul17_15,
+            dataVar: 'json_HortasemSoCaetanodoSul20_15',
+            layerName: 'layer_HortasemSoCaetanodoSul20_15',
+            pane: 'pane_HortasemSoCaetanodoSul20_15',
+            onEachFeature: pop_HortasemSoCaetanodoSul20_15,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemSoCaetanodoSul17_15_0(feature));
+                return L.marker(latlng, style_HortasemSoCaetanodoSul20_15_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemSoCaetanodoSul17_15);
-        map.addLayer(layer_HortasemSoCaetanodoSul17_15);
+        bounds_group.addLayer(layer_HortasemSoCaetanodoSul20_15);
+        map.addLayer(layer_HortasemSoCaetanodoSul20_15);
         function pop_HortasemSoBernardodoCampo60_16(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -1281,9 +1266,6 @@
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1306,7 +1288,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/HortasemSoBernardodoCampo60_16.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
@@ -1352,9 +1334,6 @@
                         <td class="visible-with-data" id="Origem" colspan="2"><strong>Origem</strong><br />' + (feature.properties['Origem'] !== null ? autolinker.link(String(feature.properties['Origem']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Tipo" colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Nome Horta" colspan="2"><strong>Nome Horta</strong><br />' + (feature.properties['Nome Horta'] !== null ? autolinker.link(String(feature.properties['Nome Horta']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -1375,7 +1354,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/HortasemSantoAndr212_17.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
@@ -1400,16 +1379,69 @@
         });
         bounds_group.addLayer(layer_HortasemSantoAndr212_17);
         map.addLayer(layer_HortasemSantoAndr212_17);
+        const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
+        "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
+        var photonControl = L.control.photon({
+            url: url["Nominatim OSM"],
+            feedbackLabel: '',
+            position: 'topleft',
+            includePosition: true,
+            initial: true,
+            // resultsHandler: myHandler,
+        }).addTo(map);
+        photonControl._container.childNodes[0].style.borderRadius="10px"
+        // Create a variable to store the geoJSON data
+        var x = null;
+        // Create a variable to store the marker
+        var marker = null;
+        // Add an event listener to the Photon control to create a marker from the returned geoJSON data
+        var z = null;
+        photonControl.on('selected', function(e) {
+            console.log(photonControl.search.resultsContainer);
+            if (x != null) {
+                map.removeLayer(obj3.marker);
+                map.removeLayer(x);
+            }
+            obj2.gcd = e.choice;
+            x = L.geoJSON(obj2.gcd).addTo(map);
+            var label = typeof obj2.gcd.properties.label === 'undefined' ? obj2.gcd.properties.display_name : obj2.gcd.properties.label;
+            obj3.marker = L.marker(x.getLayers()[0].getLatLng()).bindPopup(label).addTo(map);
+            map.setView(x.getLayers()[0].getLatLng(), 17);
+            z = typeof e.choice.properties.label === 'undefined'? e.choice.properties.display_name : e.choice.properties.label;
+            console.log(e);
+            e.target.input.value = z;
+        });
+        var search = document.getElementsByClassName("leaflet-photon leaflet-control")[0];
+        search.classList.add("leaflet-control-search")
+        search.style.display = "flex";
+        search.style.backgroundColor="rgba(255,255,255,0.5)" 
+
+        // Create the new button element
+        var button = document.createElement("div");
+        button.id = "gcd-button-control";
+        button.className = "gcd-gl-btn fa fa-search search-button";
+
+        // Insert the button at the beginning of the search control
+        search.insertBefore(button, search.firstChild);
+        last = search.lastChild;
+        last.style.display = "none";
+        button.addEventListener("click", function (e) {
+            if (last.style.display === "none") {
+                last.style.display = "block";
+            } else {
+                last.style.display = "none";
+            }
+        });
         var overlaysTree = [
         {label: '<b>Hortas Mapeadas</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/HortasemSantoAndr212_17.png" /> Hortas em Santo André [212]', layer: layer_HortasemSantoAndr212_17},
             {label: '<img src="legend/HortasemSoBernardodoCampo60_16.png" /> Hortas em São Bernardo do Campo [60]', layer: layer_HortasemSoBernardodoCampo60_16},
-            {label: '<img src="legend/HortasemSoCaetanodoSul17_15.png" /> Hortas em São Caetano do Sul [17]', layer: layer_HortasemSoCaetanodoSul17_15},
+            {label: '<img src="legend/HortasemSoCaetanodoSul20_15.png" /> Hortas em São Caetano do Sul [20]', layer: layer_HortasemSoCaetanodoSul20_15},
             {label: '<img src="legend/HortasemDiadema80_14.png" /> Hortas em Diadema [80]', layer: layer_HortasemDiadema80_14},
             {label: '<img src="legend/HortasemMau64_13.png" /> Hortas em Mauá [64]', layer: layer_HortasemMau64_13},
             {label: '<img src="legend/HortasemRibeiroPires16_12.png" /> Hortas em Ribeirão Pires [16]', layer: layer_HortasemRibeiroPires16_12},
-            {label: '<img src="legend/HortasemRioGrandedaSerra16_11.png" /> Hortas em Rio Grande da Serra [16]', layer: layer_HortasemRioGrandedaSerra16_11},]},
-        {label: '<b>Camadas Auxiliares</b>', collapsed: true, selectAllCheckbox: true, children: [
+            {label: '<img src="legend/HortasemRioGrandedaSerra19_11.png" /> Hortas em Rio Grande da Serra [19]', layer: layer_HortasemRioGrandedaSerra19_11},]},
+        {label: '<b>Camadas Auxiliares</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/LimitesdosMunicpiosABCDMRR_10.png" /> Limites dos Municípios - ABCDMRR', layer: layer_LimitesdosMunicpiosABCDMRR_10},
             {label: '<img src="legend/TerrasIndgenasnoestadodeSoPaulo_9.png" /> Terras Indígenas no estado de São Paulo', layer: layer_TerrasIndgenasnoestadodeSoPaulo_9},
             {label: '<img src="legend/OleodutosRegABCDRMM_8.png" /> Oleodutos Reg. ABCDRMM', layer: layer_OleodutosRegABCDRMM_8},
