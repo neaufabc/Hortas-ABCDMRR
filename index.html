@@ -41,21 +41,21 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/ReservatriosRMSP_1.js"></script>
-        <script src="data/InventrioFlorestal2020_2.js"></script>
-        <script src="data/CinturoVerdedeSP_3.js"></script>
-        <script src="data/LinhadeEnergiaRegABCDMRR_4.js"></script>
-        <script src="data/TorredeEnergiaRegABCDMRR_5.js"></script>
-        <script src="data/OleodutosRegABCDRMM_6.js"></script>
-        <script src="data/TerrasIndgenasnoestadodeSoPaulo_7.js"></script>
-        <script src="data/LimitesdosMunicpiosABCDMRR_8.js"></script>
-        <script src="data/HortasemRioGrandedaSerra19_9.js"></script>
-        <script src="data/HortasemRibeiroPires16_10.js"></script>
-        <script src="data/HortasemMau64_11.js"></script>
-        <script src="data/HortasemDiadema80_12.js"></script>
-        <script src="data/HortasemSoCaetanodoSul20_13.js"></script>
-        <script src="data/HortasemSoBernardodoCampo60_14.js"></script>
-        <script src="data/HortasemSantoAndr212_15.js"></script>
+        <script src="data/ReservatriosRMSP_3.js"></script>
+        <script src="data/InventrioFlorestal2020_4.js"></script>
+        <script src="data/CinturoVerdedeSP_5.js"></script>
+        <script src="data/LinhadeEnergiaRegABCDMRR_6.js"></script>
+        <script src="data/TorredeEnergiaRegABCDMRR_7.js"></script>
+        <script src="data/OleodutosRegABCDRMM_8.js"></script>
+        <script src="data/TerrasIndgenasnoestadodeSoPaulo_9.js"></script>
+        <script src="data/LimitesdosMunicpiosABCDMRR_10.js"></script>
+        <script src="data/HortasemRioGrandedaSerra19_11.js"></script>
+        <script src="data/HortasemRibeiroPires16_12.js"></script>
+        <script src="data/HortasemMau64_13.js"></script>
+        <script src="data/HortasemDiadema80_14.js"></script>
+        <script src="data/HortasemSoCaetanodoSul20_15.js"></script>
+        <script src="data/HortasemSoBernardodoCampo60_16.js"></script>
+        <script src="data/HortasemSantoAndr212_17.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -64,7 +64,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-23.982209949622032,-46.88483474083137],[-23.587886474541868,-46.146899256447476]]);
+        }).fitBounds([[-23.980071508527416,-46.861679364233545],[-23.58585423105189,-46.123816663155765]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -177,10 +177,34 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_Positronretina_0');
-        map.getPane('pane_Positronretina_0').style.zIndex = 400;
-        var layer_Positronretina_0 = L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png', {
-            pane: 'pane_Positronretina_0',
+        map.createPane('pane_GoogleSatellite_0');
+        map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
+        var layer_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_GoogleSatellite_0;
+        map.createPane('pane_OSMStandard_1');
+        map.getPane('pane_OSMStandard_1').style.zIndex = 401;
+        var layer_OSMStandard_1 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_1',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_1;
+        map.createPane('pane_Positronretina_2');
+        map.getPane('pane_Positronretina_2').style.zIndex = 402;
+        var layer_Positronretina_2 = L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png', {
+            pane: 'pane_Positronretina_2',
             opacity: 1.0,
             attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
             minZoom: 1,
@@ -188,9 +212,9 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_Positronretina_0;
-        map.addLayer(layer_Positronretina_0);
-        function pop_ReservatriosRMSP_1(feature, layer) {
+        layer_Positronretina_2;
+        map.addLayer(layer_Positronretina_2);
+        function pop_ReservatriosRMSP_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -239,31 +263,31 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ReservatriosRMSP_1_0() {
+        function style_ReservatriosRMSP_3_0() {
             return {
-                pane: 'pane_ReservatriosRMSP_1',
+                pane: 'pane_ReservatriosRMSP_3',
                 stroke: false, 
                 fill: true,
-                fillOpacity: 0.5,
+                fillOpacity: 0.4,
                 fillColor: 'rgba(109,174,253,1.0)',
                 interactive: false,
             }
         }
-        map.createPane('pane_ReservatriosRMSP_1');
-        map.getPane('pane_ReservatriosRMSP_1').style.zIndex = 401;
-        map.getPane('pane_ReservatriosRMSP_1').style['mix-blend-mode'] = 'normal';
-        var layer_ReservatriosRMSP_1 = new L.geoJson(json_ReservatriosRMSP_1, {
+        map.createPane('pane_ReservatriosRMSP_3');
+        map.getPane('pane_ReservatriosRMSP_3').style.zIndex = 403;
+        map.getPane('pane_ReservatriosRMSP_3').style['mix-blend-mode'] = 'normal';
+        var layer_ReservatriosRMSP_3 = new L.geoJson(json_ReservatriosRMSP_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_ReservatriosRMSP_1',
-            layerName: 'layer_ReservatriosRMSP_1',
-            pane: 'pane_ReservatriosRMSP_1',
-            onEachFeature: pop_ReservatriosRMSP_1,
-            style: style_ReservatriosRMSP_1_0,
+            dataVar: 'json_ReservatriosRMSP_3',
+            layerName: 'layer_ReservatriosRMSP_3',
+            pane: 'pane_ReservatriosRMSP_3',
+            onEachFeature: pop_ReservatriosRMSP_3,
+            style: style_ReservatriosRMSP_3_0,
         });
-        bounds_group.addLayer(layer_ReservatriosRMSP_1);
-        map.addLayer(layer_ReservatriosRMSP_1);
-        function pop_InventrioFlorestal2020_2(feature, layer) {
+        bounds_group.addLayer(layer_ReservatriosRMSP_3);
+        map.addLayer(layer_ReservatriosRMSP_3);
+        function pop_InventrioFlorestal2020_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -297,31 +321,31 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_InventrioFlorestal2020_2_0() {
+        function style_InventrioFlorestal2020_4_0() {
             return {
-                pane: 'pane_InventrioFlorestal2020_2',
+                pane: 'pane_InventrioFlorestal2020_4',
                 stroke: false, 
                 fill: true,
-                fillOpacity: 0.5,
+                fillOpacity: 0.45,
                 fillColor: 'rgba(92,195,104,1.0)',
                 interactive: false,
             }
         }
-        map.createPane('pane_InventrioFlorestal2020_2');
-        map.getPane('pane_InventrioFlorestal2020_2').style.zIndex = 402;
-        map.getPane('pane_InventrioFlorestal2020_2').style['mix-blend-mode'] = 'normal';
-        var layer_InventrioFlorestal2020_2 = new L.geoJson(json_InventrioFlorestal2020_2, {
+        map.createPane('pane_InventrioFlorestal2020_4');
+        map.getPane('pane_InventrioFlorestal2020_4').style.zIndex = 404;
+        map.getPane('pane_InventrioFlorestal2020_4').style['mix-blend-mode'] = 'normal';
+        var layer_InventrioFlorestal2020_4 = new L.geoJson(json_InventrioFlorestal2020_4, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_InventrioFlorestal2020_2',
-            layerName: 'layer_InventrioFlorestal2020_2',
-            pane: 'pane_InventrioFlorestal2020_2',
-            onEachFeature: pop_InventrioFlorestal2020_2,
-            style: style_InventrioFlorestal2020_2_0,
+            dataVar: 'json_InventrioFlorestal2020_4',
+            layerName: 'layer_InventrioFlorestal2020_4',
+            pane: 'pane_InventrioFlorestal2020_4',
+            onEachFeature: pop_InventrioFlorestal2020_4,
+            style: style_InventrioFlorestal2020_4_0,
         });
-        bounds_group.addLayer(layer_InventrioFlorestal2020_2);
-        map.addLayer(layer_InventrioFlorestal2020_2);
-        function pop_CinturoVerdedeSP_3(feature, layer) {
+        bounds_group.addLayer(layer_InventrioFlorestal2020_4);
+        map.addLayer(layer_InventrioFlorestal2020_4);
+        function pop_CinturoVerdedeSP_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -349,9 +373,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_CinturoVerdedeSP_3_0() {
+        function style_CinturoVerdedeSP_5_0() {
             return {
-                pane: 'pane_CinturoVerdedeSP_3',
+                pane: 'pane_CinturoVerdedeSP_5',
                 opacity: 1,
                 color: 'rgba(17,72,0,1.0)',
                 dashArray: '',
@@ -364,20 +388,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_CinturoVerdedeSP_3');
-        map.getPane('pane_CinturoVerdedeSP_3').style.zIndex = 403;
-        map.getPane('pane_CinturoVerdedeSP_3').style['mix-blend-mode'] = 'normal';
-        var layer_CinturoVerdedeSP_3 = new L.geoJson(json_CinturoVerdedeSP_3, {
+        map.createPane('pane_CinturoVerdedeSP_5');
+        map.getPane('pane_CinturoVerdedeSP_5').style.zIndex = 405;
+        map.getPane('pane_CinturoVerdedeSP_5').style['mix-blend-mode'] = 'normal';
+        var layer_CinturoVerdedeSP_5 = new L.geoJson(json_CinturoVerdedeSP_5, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_CinturoVerdedeSP_3',
-            layerName: 'layer_CinturoVerdedeSP_3',
-            pane: 'pane_CinturoVerdedeSP_3',
-            onEachFeature: pop_CinturoVerdedeSP_3,
-            style: style_CinturoVerdedeSP_3_0,
+            dataVar: 'json_CinturoVerdedeSP_5',
+            layerName: 'layer_CinturoVerdedeSP_5',
+            pane: 'pane_CinturoVerdedeSP_5',
+            onEachFeature: pop_CinturoVerdedeSP_5,
+            style: style_CinturoVerdedeSP_5_0,
         });
-        bounds_group.addLayer(layer_CinturoVerdedeSP_3);
-        function pop_LinhadeEnergiaRegABCDMRR_4(feature, layer) {
+        bounds_group.addLayer(layer_CinturoVerdedeSP_5);
+        function pop_LinhadeEnergiaRegABCDMRR_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -444,9 +468,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_LinhadeEnergiaRegABCDMRR_4_0() {
+        function style_LinhadeEnergiaRegABCDMRR_6_0() {
             return {
-                pane: 'pane_LinhadeEnergiaRegABCDMRR_4',
+                pane: 'pane_LinhadeEnergiaRegABCDMRR_6',
                 opacity: 1,
                 color: 'rgba(125,125,125,1.0)',
                 dashArray: '',
@@ -457,20 +481,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_LinhadeEnergiaRegABCDMRR_4');
-        map.getPane('pane_LinhadeEnergiaRegABCDMRR_4').style.zIndex = 404;
-        map.getPane('pane_LinhadeEnergiaRegABCDMRR_4').style['mix-blend-mode'] = 'normal';
-        var layer_LinhadeEnergiaRegABCDMRR_4 = new L.geoJson(json_LinhadeEnergiaRegABCDMRR_4, {
+        map.createPane('pane_LinhadeEnergiaRegABCDMRR_6');
+        map.getPane('pane_LinhadeEnergiaRegABCDMRR_6').style.zIndex = 406;
+        map.getPane('pane_LinhadeEnergiaRegABCDMRR_6').style['mix-blend-mode'] = 'normal';
+        var layer_LinhadeEnergiaRegABCDMRR_6 = new L.geoJson(json_LinhadeEnergiaRegABCDMRR_6, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_LinhadeEnergiaRegABCDMRR_4',
-            layerName: 'layer_LinhadeEnergiaRegABCDMRR_4',
-            pane: 'pane_LinhadeEnergiaRegABCDMRR_4',
-            onEachFeature: pop_LinhadeEnergiaRegABCDMRR_4,
-            style: style_LinhadeEnergiaRegABCDMRR_4_0,
+            dataVar: 'json_LinhadeEnergiaRegABCDMRR_6',
+            layerName: 'layer_LinhadeEnergiaRegABCDMRR_6',
+            pane: 'pane_LinhadeEnergiaRegABCDMRR_6',
+            onEachFeature: pop_LinhadeEnergiaRegABCDMRR_6,
+            style: style_LinhadeEnergiaRegABCDMRR_6_0,
         });
-        bounds_group.addLayer(layer_LinhadeEnergiaRegABCDMRR_4);
-        function pop_TorredeEnergiaRegABCDMRR_5(feature, layer) {
+        bounds_group.addLayer(layer_LinhadeEnergiaRegABCDMRR_6);
+        function pop_TorredeEnergiaRegABCDMRR_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -531,9 +555,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_TorredeEnergiaRegABCDMRR_5_0() {
+        function style_TorredeEnergiaRegABCDMRR_7_0() {
             return {
-                pane: 'pane_TorredeEnergiaRegABCDMRR_5',
+                pane: 'pane_TorredeEnergiaRegABCDMRR_7',
                 shape: 'square',
                 radius: 0.9,
                 stroke: false,
@@ -543,26 +567,26 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_TorredeEnergiaRegABCDMRR_5');
-        map.getPane('pane_TorredeEnergiaRegABCDMRR_5').style.zIndex = 405;
-        map.getPane('pane_TorredeEnergiaRegABCDMRR_5').style['mix-blend-mode'] = 'normal';
-        var layer_TorredeEnergiaRegABCDMRR_5 = new L.geoJson(json_TorredeEnergiaRegABCDMRR_5, {
+        map.createPane('pane_TorredeEnergiaRegABCDMRR_7');
+        map.getPane('pane_TorredeEnergiaRegABCDMRR_7').style.zIndex = 407;
+        map.getPane('pane_TorredeEnergiaRegABCDMRR_7').style['mix-blend-mode'] = 'normal';
+        var layer_TorredeEnergiaRegABCDMRR_7 = new L.geoJson(json_TorredeEnergiaRegABCDMRR_7, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_TorredeEnergiaRegABCDMRR_5',
-            layerName: 'layer_TorredeEnergiaRegABCDMRR_5',
-            pane: 'pane_TorredeEnergiaRegABCDMRR_5',
-            onEachFeature: pop_TorredeEnergiaRegABCDMRR_5,
+            dataVar: 'json_TorredeEnergiaRegABCDMRR_7',
+            layerName: 'layer_TorredeEnergiaRegABCDMRR_7',
+            pane: 'pane_TorredeEnergiaRegABCDMRR_7',
+            onEachFeature: pop_TorredeEnergiaRegABCDMRR_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_TorredeEnergiaRegABCDMRR_5_0(feature));
+                return L.shapeMarker(latlng, style_TorredeEnergiaRegABCDMRR_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_TorredeEnergiaRegABCDMRR_5);
-        function pop_OleodutosRegABCDRMM_6(feature, layer) {
+        bounds_group.addLayer(layer_TorredeEnergiaRegABCDMRR_7);
+        function pop_OleodutosRegABCDRMM_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -683,9 +707,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_OleodutosRegABCDRMM_6_0() {
+        function style_OleodutosRegABCDRMM_8_0() {
             return {
-                pane: 'pane_OleodutosRegABCDRMM_6',
+                pane: 'pane_OleodutosRegABCDRMM_8',
                 opacity: 1,
                 color: 'rgba(213,180,60,1.0)',
                 dashArray: '',
@@ -696,20 +720,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_OleodutosRegABCDRMM_6');
-        map.getPane('pane_OleodutosRegABCDRMM_6').style.zIndex = 406;
-        map.getPane('pane_OleodutosRegABCDRMM_6').style['mix-blend-mode'] = 'normal';
-        var layer_OleodutosRegABCDRMM_6 = new L.geoJson(json_OleodutosRegABCDRMM_6, {
+        map.createPane('pane_OleodutosRegABCDRMM_8');
+        map.getPane('pane_OleodutosRegABCDRMM_8').style.zIndex = 408;
+        map.getPane('pane_OleodutosRegABCDRMM_8').style['mix-blend-mode'] = 'normal';
+        var layer_OleodutosRegABCDRMM_8 = new L.geoJson(json_OleodutosRegABCDRMM_8, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_OleodutosRegABCDRMM_6',
-            layerName: 'layer_OleodutosRegABCDRMM_6',
-            pane: 'pane_OleodutosRegABCDRMM_6',
-            onEachFeature: pop_OleodutosRegABCDRMM_6,
-            style: style_OleodutosRegABCDRMM_6_0,
+            dataVar: 'json_OleodutosRegABCDRMM_8',
+            layerName: 'layer_OleodutosRegABCDRMM_8',
+            pane: 'pane_OleodutosRegABCDRMM_8',
+            onEachFeature: pop_OleodutosRegABCDRMM_8,
+            style: style_OleodutosRegABCDRMM_8_0,
         });
-        bounds_group.addLayer(layer_OleodutosRegABCDRMM_6);
-        function pop_TerrasIndgenasnoestadodeSoPaulo_7(feature, layer) {
+        bounds_group.addLayer(layer_OleodutosRegABCDRMM_8);
+        function pop_TerrasIndgenasnoestadodeSoPaulo_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -788,7 +812,7 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        var pattern_TerrasIndgenasnoestadodeSoPaulo_7_0 = new L.StripePattern({
+        var pattern_TerrasIndgenasnoestadodeSoPaulo_9_0 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
             color: '#079f18',
@@ -796,19 +820,19 @@
             spaceOpacity: 0,
             angle: 315
         });
-        pattern_TerrasIndgenasnoestadodeSoPaulo_7_0.addTo(map);
-        function style_TerrasIndgenasnoestadodeSoPaulo_7_0() {
+        pattern_TerrasIndgenasnoestadodeSoPaulo_9_0.addTo(map);
+        function style_TerrasIndgenasnoestadodeSoPaulo_9_0() {
             return {
-                pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_7',
+                pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_9',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_TerrasIndgenasnoestadodeSoPaulo_7_0,
+                fillPattern: pattern_TerrasIndgenasnoestadodeSoPaulo_9_0,
                 interactive: false,
             }
         }
-        function style_TerrasIndgenasnoestadodeSoPaulo_7_1() {
+        function style_TerrasIndgenasnoestadodeSoPaulo_9_1() {
             return {
-                pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_7',
+                pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_9',
                 opacity: 1,
                 color: 'rgba(7,159,24,1.0)',
                 dashArray: '',
@@ -819,20 +843,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_TerrasIndgenasnoestadodeSoPaulo_7');
-        map.getPane('pane_TerrasIndgenasnoestadodeSoPaulo_7').style.zIndex = 407;
-        map.getPane('pane_TerrasIndgenasnoestadodeSoPaulo_7').style['mix-blend-mode'] = 'normal';
-        var layer_TerrasIndgenasnoestadodeSoPaulo_7 = new L.geoJson.multiStyle(json_TerrasIndgenasnoestadodeSoPaulo_7, {
+        map.createPane('pane_TerrasIndgenasnoestadodeSoPaulo_9');
+        map.getPane('pane_TerrasIndgenasnoestadodeSoPaulo_9').style.zIndex = 409;
+        map.getPane('pane_TerrasIndgenasnoestadodeSoPaulo_9').style['mix-blend-mode'] = 'normal';
+        var layer_TerrasIndgenasnoestadodeSoPaulo_9 = new L.geoJson.multiStyle(json_TerrasIndgenasnoestadodeSoPaulo_9, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_TerrasIndgenasnoestadodeSoPaulo_7',
-            layerName: 'layer_TerrasIndgenasnoestadodeSoPaulo_7',
-            pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_7',
-            onEachFeature: pop_TerrasIndgenasnoestadodeSoPaulo_7,
-            styles: [style_TerrasIndgenasnoestadodeSoPaulo_7_0,style_TerrasIndgenasnoestadodeSoPaulo_7_1,]
+            dataVar: 'json_TerrasIndgenasnoestadodeSoPaulo_9',
+            layerName: 'layer_TerrasIndgenasnoestadodeSoPaulo_9',
+            pane: 'pane_TerrasIndgenasnoestadodeSoPaulo_9',
+            onEachFeature: pop_TerrasIndgenasnoestadodeSoPaulo_9,
+            styles: [style_TerrasIndgenasnoestadodeSoPaulo_9_0,style_TerrasIndgenasnoestadodeSoPaulo_9_1,]
         });
-        bounds_group.addLayer(layer_TerrasIndgenasnoestadodeSoPaulo_7);
-        function pop_LimitesdosMunicpiosABCDMRR_8(feature, layer) {
+        bounds_group.addLayer(layer_TerrasIndgenasnoestadodeSoPaulo_9);
+        function pop_LimitesdosMunicpiosABCDMRR_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -866,9 +890,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_LimitesdosMunicpiosABCDMRR_8_0() {
+        function style_LimitesdosMunicpiosABCDMRR_10_0() {
             return {
-                pane: 'pane_LimitesdosMunicpiosABCDMRR_8',
+                pane: 'pane_LimitesdosMunicpiosABCDMRR_10',
                 opacity: 1,
                 color: 'rgba(228,26,28,1.0)',
                 dashArray: '',
@@ -879,21 +903,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_LimitesdosMunicpiosABCDMRR_8');
-        map.getPane('pane_LimitesdosMunicpiosABCDMRR_8').style.zIndex = 408;
-        map.getPane('pane_LimitesdosMunicpiosABCDMRR_8').style['mix-blend-mode'] = 'normal';
-        var layer_LimitesdosMunicpiosABCDMRR_8 = new L.geoJson(json_LimitesdosMunicpiosABCDMRR_8, {
+        map.createPane('pane_LimitesdosMunicpiosABCDMRR_10');
+        map.getPane('pane_LimitesdosMunicpiosABCDMRR_10').style.zIndex = 410;
+        map.getPane('pane_LimitesdosMunicpiosABCDMRR_10').style['mix-blend-mode'] = 'normal';
+        var layer_LimitesdosMunicpiosABCDMRR_10 = new L.geoJson(json_LimitesdosMunicpiosABCDMRR_10, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_LimitesdosMunicpiosABCDMRR_8',
-            layerName: 'layer_LimitesdosMunicpiosABCDMRR_8',
-            pane: 'pane_LimitesdosMunicpiosABCDMRR_8',
-            onEachFeature: pop_LimitesdosMunicpiosABCDMRR_8,
-            style: style_LimitesdosMunicpiosABCDMRR_8_0,
+            dataVar: 'json_LimitesdosMunicpiosABCDMRR_10',
+            layerName: 'layer_LimitesdosMunicpiosABCDMRR_10',
+            pane: 'pane_LimitesdosMunicpiosABCDMRR_10',
+            onEachFeature: pop_LimitesdosMunicpiosABCDMRR_10,
+            style: style_LimitesdosMunicpiosABCDMRR_10_0,
         });
-        bounds_group.addLayer(layer_LimitesdosMunicpiosABCDMRR_8);
-        map.addLayer(layer_LimitesdosMunicpiosABCDMRR_8);
-        function pop_HortasemRioGrandedaSerra19_9(feature, layer) {
+        bounds_group.addLayer(layer_LimitesdosMunicpiosABCDMRR_10);
+        map.addLayer(layer_LimitesdosMunicpiosABCDMRR_10);
+        function pop_HortasemRioGrandedaSerra19_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -927,39 +951,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemRioGrandedaSerra19_9_0() {
+        function style_HortasemRioGrandedaSerra19_11_0() {
             return {
-                pane: 'pane_HortasemRioGrandedaSerra19_9',
+                pane: 'pane_HortasemRioGrandedaSerra19_11',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemRioGrandedaSerra19_9.svg',
+            iconUrl: 'markers/HortasemRioGrandedaSerra19_11.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemRioGrandedaSerra19_9');
-        map.getPane('pane_HortasemRioGrandedaSerra19_9').style.zIndex = 409;
-        map.getPane('pane_HortasemRioGrandedaSerra19_9').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemRioGrandedaSerra19_9 = new L.geoJson(json_HortasemRioGrandedaSerra19_9, {
+        map.createPane('pane_HortasemRioGrandedaSerra19_11');
+        map.getPane('pane_HortasemRioGrandedaSerra19_11').style.zIndex = 411;
+        map.getPane('pane_HortasemRioGrandedaSerra19_11').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemRioGrandedaSerra19_11 = new L.geoJson(json_HortasemRioGrandedaSerra19_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemRioGrandedaSerra19_9',
-            layerName: 'layer_HortasemRioGrandedaSerra19_9',
-            pane: 'pane_HortasemRioGrandedaSerra19_9',
-            onEachFeature: pop_HortasemRioGrandedaSerra19_9,
+            dataVar: 'json_HortasemRioGrandedaSerra19_11',
+            layerName: 'layer_HortasemRioGrandedaSerra19_11',
+            pane: 'pane_HortasemRioGrandedaSerra19_11',
+            onEachFeature: pop_HortasemRioGrandedaSerra19_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemRioGrandedaSerra19_9_0(feature));
+                return L.marker(latlng, style_HortasemRioGrandedaSerra19_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemRioGrandedaSerra19_9);
-        map.addLayer(layer_HortasemRioGrandedaSerra19_9);
-        function pop_HortasemRibeiroPires16_10(feature, layer) {
+        bounds_group.addLayer(layer_HortasemRioGrandedaSerra19_11);
+        map.addLayer(layer_HortasemRioGrandedaSerra19_11);
+        function pop_HortasemRibeiroPires16_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -993,39 +1017,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemRibeiroPires16_10_0() {
+        function style_HortasemRibeiroPires16_12_0() {
             return {
-                pane: 'pane_HortasemRibeiroPires16_10',
+                pane: 'pane_HortasemRibeiroPires16_12',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemRibeiroPires16_10.svg',
+            iconUrl: 'markers/HortasemRibeiroPires16_12.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemRibeiroPires16_10');
-        map.getPane('pane_HortasemRibeiroPires16_10').style.zIndex = 410;
-        map.getPane('pane_HortasemRibeiroPires16_10').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemRibeiroPires16_10 = new L.geoJson(json_HortasemRibeiroPires16_10, {
+        map.createPane('pane_HortasemRibeiroPires16_12');
+        map.getPane('pane_HortasemRibeiroPires16_12').style.zIndex = 412;
+        map.getPane('pane_HortasemRibeiroPires16_12').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemRibeiroPires16_12 = new L.geoJson(json_HortasemRibeiroPires16_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemRibeiroPires16_10',
-            layerName: 'layer_HortasemRibeiroPires16_10',
-            pane: 'pane_HortasemRibeiroPires16_10',
-            onEachFeature: pop_HortasemRibeiroPires16_10,
+            dataVar: 'json_HortasemRibeiroPires16_12',
+            layerName: 'layer_HortasemRibeiroPires16_12',
+            pane: 'pane_HortasemRibeiroPires16_12',
+            onEachFeature: pop_HortasemRibeiroPires16_12,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemRibeiroPires16_10_0(feature));
+                return L.marker(latlng, style_HortasemRibeiroPires16_12_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemRibeiroPires16_10);
-        map.addLayer(layer_HortasemRibeiroPires16_10);
-        function pop_HortasemMau64_11(feature, layer) {
+        bounds_group.addLayer(layer_HortasemRibeiroPires16_12);
+        map.addLayer(layer_HortasemRibeiroPires16_12);
+        function pop_HortasemMau64_13(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1059,39 +1083,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemMau64_11_0() {
+        function style_HortasemMau64_13_0() {
             return {
-                pane: 'pane_HortasemMau64_11',
+                pane: 'pane_HortasemMau64_13',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemMau64_11.svg',
+            iconUrl: 'markers/HortasemMau64_13.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemMau64_11');
-        map.getPane('pane_HortasemMau64_11').style.zIndex = 411;
-        map.getPane('pane_HortasemMau64_11').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemMau64_11 = new L.geoJson(json_HortasemMau64_11, {
+        map.createPane('pane_HortasemMau64_13');
+        map.getPane('pane_HortasemMau64_13').style.zIndex = 413;
+        map.getPane('pane_HortasemMau64_13').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemMau64_13 = new L.geoJson(json_HortasemMau64_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemMau64_11',
-            layerName: 'layer_HortasemMau64_11',
-            pane: 'pane_HortasemMau64_11',
-            onEachFeature: pop_HortasemMau64_11,
+            dataVar: 'json_HortasemMau64_13',
+            layerName: 'layer_HortasemMau64_13',
+            pane: 'pane_HortasemMau64_13',
+            onEachFeature: pop_HortasemMau64_13,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemMau64_11_0(feature));
+                return L.marker(latlng, style_HortasemMau64_13_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemMau64_11);
-        map.addLayer(layer_HortasemMau64_11);
-        function pop_HortasemDiadema80_12(feature, layer) {
+        bounds_group.addLayer(layer_HortasemMau64_13);
+        map.addLayer(layer_HortasemMau64_13);
+        function pop_HortasemDiadema80_14(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1125,39 +1149,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemDiadema80_12_0() {
+        function style_HortasemDiadema80_14_0() {
             return {
-                pane: 'pane_HortasemDiadema80_12',
+                pane: 'pane_HortasemDiadema80_14',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemDiadema80_12.svg',
+            iconUrl: 'markers/HortasemDiadema80_14.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemDiadema80_12');
-        map.getPane('pane_HortasemDiadema80_12').style.zIndex = 412;
-        map.getPane('pane_HortasemDiadema80_12').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemDiadema80_12 = new L.geoJson(json_HortasemDiadema80_12, {
+        map.createPane('pane_HortasemDiadema80_14');
+        map.getPane('pane_HortasemDiadema80_14').style.zIndex = 414;
+        map.getPane('pane_HortasemDiadema80_14').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemDiadema80_14 = new L.geoJson(json_HortasemDiadema80_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemDiadema80_12',
-            layerName: 'layer_HortasemDiadema80_12',
-            pane: 'pane_HortasemDiadema80_12',
-            onEachFeature: pop_HortasemDiadema80_12,
+            dataVar: 'json_HortasemDiadema80_14',
+            layerName: 'layer_HortasemDiadema80_14',
+            pane: 'pane_HortasemDiadema80_14',
+            onEachFeature: pop_HortasemDiadema80_14,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemDiadema80_12_0(feature));
+                return L.marker(latlng, style_HortasemDiadema80_14_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemDiadema80_12);
-        map.addLayer(layer_HortasemDiadema80_12);
-        function pop_HortasemSoCaetanodoSul20_13(feature, layer) {
+        bounds_group.addLayer(layer_HortasemDiadema80_14);
+        map.addLayer(layer_HortasemDiadema80_14);
+        function pop_HortasemSoCaetanodoSul20_15(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1191,39 +1215,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemSoCaetanodoSul20_13_0() {
+        function style_HortasemSoCaetanodoSul20_15_0() {
             return {
-                pane: 'pane_HortasemSoCaetanodoSul20_13',
+                pane: 'pane_HortasemSoCaetanodoSul20_15',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemSoCaetanodoSul20_13.svg',
+            iconUrl: 'markers/HortasemSoCaetanodoSul20_15.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemSoCaetanodoSul20_13');
-        map.getPane('pane_HortasemSoCaetanodoSul20_13').style.zIndex = 413;
-        map.getPane('pane_HortasemSoCaetanodoSul20_13').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemSoCaetanodoSul20_13 = new L.geoJson(json_HortasemSoCaetanodoSul20_13, {
+        map.createPane('pane_HortasemSoCaetanodoSul20_15');
+        map.getPane('pane_HortasemSoCaetanodoSul20_15').style.zIndex = 415;
+        map.getPane('pane_HortasemSoCaetanodoSul20_15').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemSoCaetanodoSul20_15 = new L.geoJson(json_HortasemSoCaetanodoSul20_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemSoCaetanodoSul20_13',
-            layerName: 'layer_HortasemSoCaetanodoSul20_13',
-            pane: 'pane_HortasemSoCaetanodoSul20_13',
-            onEachFeature: pop_HortasemSoCaetanodoSul20_13,
+            dataVar: 'json_HortasemSoCaetanodoSul20_15',
+            layerName: 'layer_HortasemSoCaetanodoSul20_15',
+            pane: 'pane_HortasemSoCaetanodoSul20_15',
+            onEachFeature: pop_HortasemSoCaetanodoSul20_15,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemSoCaetanodoSul20_13_0(feature));
+                return L.marker(latlng, style_HortasemSoCaetanodoSul20_15_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemSoCaetanodoSul20_13);
-        map.addLayer(layer_HortasemSoCaetanodoSul20_13);
-        function pop_HortasemSoBernardodoCampo60_14(feature, layer) {
+        bounds_group.addLayer(layer_HortasemSoCaetanodoSul20_15);
+        map.addLayer(layer_HortasemSoCaetanodoSul20_15);
+        function pop_HortasemSoBernardodoCampo60_16(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1257,39 +1281,39 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemSoBernardodoCampo60_14_0() {
+        function style_HortasemSoBernardodoCampo60_16_0() {
             return {
-                pane: 'pane_HortasemSoBernardodoCampo60_14',
+                pane: 'pane_HortasemSoBernardodoCampo60_16',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemSoBernardodoCampo60_14.svg',
+            iconUrl: 'markers/HortasemSoBernardodoCampo60_16.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemSoBernardodoCampo60_14');
-        map.getPane('pane_HortasemSoBernardodoCampo60_14').style.zIndex = 414;
-        map.getPane('pane_HortasemSoBernardodoCampo60_14').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemSoBernardodoCampo60_14 = new L.geoJson(json_HortasemSoBernardodoCampo60_14, {
+        map.createPane('pane_HortasemSoBernardodoCampo60_16');
+        map.getPane('pane_HortasemSoBernardodoCampo60_16').style.zIndex = 416;
+        map.getPane('pane_HortasemSoBernardodoCampo60_16').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemSoBernardodoCampo60_16 = new L.geoJson(json_HortasemSoBernardodoCampo60_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemSoBernardodoCampo60_14',
-            layerName: 'layer_HortasemSoBernardodoCampo60_14',
-            pane: 'pane_HortasemSoBernardodoCampo60_14',
-            onEachFeature: pop_HortasemSoBernardodoCampo60_14,
+            dataVar: 'json_HortasemSoBernardodoCampo60_16',
+            layerName: 'layer_HortasemSoBernardodoCampo60_16',
+            pane: 'pane_HortasemSoBernardodoCampo60_16',
+            onEachFeature: pop_HortasemSoBernardodoCampo60_16,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemSoBernardodoCampo60_14_0(feature));
+                return L.marker(latlng, style_HortasemSoBernardodoCampo60_16_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemSoBernardodoCampo60_14);
-        map.addLayer(layer_HortasemSoBernardodoCampo60_14);
-        function pop_HortasemSantoAndr212_15(feature, layer) {
+        bounds_group.addLayer(layer_HortasemSoBernardodoCampo60_16);
+        map.addLayer(layer_HortasemSoBernardodoCampo60_16);
+        function pop_HortasemSantoAndr212_17(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -1323,38 +1347,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HortasemSantoAndr212_15_0() {
+        function style_HortasemSantoAndr212_17_0() {
             return {
-                pane: 'pane_HortasemSantoAndr212_15',
+                pane: 'pane_HortasemSantoAndr212_17',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/HortasemSantoAndr212_15.svg',
+            iconUrl: 'markers/HortasemSantoAndr212_17.svg',
             iconSize: [7.6, 7.6]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_HortasemSantoAndr212_15');
-        map.getPane('pane_HortasemSantoAndr212_15').style.zIndex = 415;
-        map.getPane('pane_HortasemSantoAndr212_15').style['mix-blend-mode'] = 'normal';
-        var layer_HortasemSantoAndr212_15 = new L.geoJson(json_HortasemSantoAndr212_15, {
+        map.createPane('pane_HortasemSantoAndr212_17');
+        map.getPane('pane_HortasemSantoAndr212_17').style.zIndex = 417;
+        map.getPane('pane_HortasemSantoAndr212_17').style['mix-blend-mode'] = 'normal';
+        var layer_HortasemSantoAndr212_17 = new L.geoJson(json_HortasemSantoAndr212_17, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HortasemSantoAndr212_15',
-            layerName: 'layer_HortasemSantoAndr212_15',
-            pane: 'pane_HortasemSantoAndr212_15',
-            onEachFeature: pop_HortasemSantoAndr212_15,
+            dataVar: 'json_HortasemSantoAndr212_17',
+            layerName: 'layer_HortasemSantoAndr212_17',
+            pane: 'pane_HortasemSantoAndr212_17',
+            onEachFeature: pop_HortasemSantoAndr212_17,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HortasemSantoAndr212_15_0(feature));
+                return L.marker(latlng, style_HortasemSantoAndr212_17_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HortasemSantoAndr212_15);
-        map.addLayer(layer_HortasemSantoAndr212_15);
+        bounds_group.addLayer(layer_HortasemSantoAndr212_17);
+        map.addLayer(layer_HortasemSantoAndr212_17);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -1410,24 +1434,26 @@
         });
         var overlaysTree = [
         {label: '<b>Hortas Mapeadas</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/HortasemSantoAndr212_15.png" /> Hortas em Santo André [212]', layer: layer_HortasemSantoAndr212_15},
-            {label: '<img src="legend/HortasemSoBernardodoCampo60_14.png" /> Hortas em São Bernardo do Campo [60]', layer: layer_HortasemSoBernardodoCampo60_14},
-            {label: '<img src="legend/HortasemSoCaetanodoSul20_13.png" /> Hortas em São Caetano do Sul [20]', layer: layer_HortasemSoCaetanodoSul20_13},
-            {label: '<img src="legend/HortasemDiadema80_12.png" /> Hortas em Diadema [80]', layer: layer_HortasemDiadema80_12},
-            {label: '<img src="legend/HortasemMau64_11.png" /> Hortas em Mauá [64]', layer: layer_HortasemMau64_11},
-            {label: '<img src="legend/HortasemRibeiroPires16_10.png" /> Hortas em Ribeirão Pires [16]', layer: layer_HortasemRibeiroPires16_10},
-            {label: '<img src="legend/HortasemRioGrandedaSerra19_9.png" /> Hortas em Rio Grande da Serra [19]', layer: layer_HortasemRioGrandedaSerra19_9},]},
-        {label: '<b>Camadas Auxiliares</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/LimitesdosMunicpiosABCDMRR_8.png" /> Limites dos Municípios - ABCDMRR', layer: layer_LimitesdosMunicpiosABCDMRR_8},
-            {label: '<img src="legend/TerrasIndgenasnoestadodeSoPaulo_7.png" /> Terras Indígenas no estado de São Paulo', layer: layer_TerrasIndgenasnoestadodeSoPaulo_7},
-            {label: '<img src="legend/OleodutosRegABCDRMM_6.png" /> Oleodutos Reg. ABCDRMM', layer: layer_OleodutosRegABCDRMM_6},
-            {label: '<img src="legend/TorredeEnergiaRegABCDMRR_5.png" /> Torre de Energia Reg. ABCDMRR', layer: layer_TorredeEnergiaRegABCDMRR_5},
-            {label: '<img src="legend/LinhadeEnergiaRegABCDMRR_4.png" /> Linha de Energia Reg. ABCDMRR', layer: layer_LinhadeEnergiaRegABCDMRR_4},
-            {label: '<img src="legend/CinturoVerdedeSP_3.png" /> Cinturão Verde de SP', layer: layer_CinturoVerdedeSP_3},
-            {label: '<img src="legend/InventrioFlorestal2020_2.png" /> Inventário Florestal 2020', layer: layer_InventrioFlorestal2020_2},
-            {label: '<img src="legend/ReservatriosRMSP_1.png" /> Reservatórios - RMSP', layer: layer_ReservatriosRMSP_1},]},
+            {label: '<img src="legend/HortasemSantoAndr212_17.png" /> Hortas em Santo André [212]', layer: layer_HortasemSantoAndr212_17},
+            {label: '<img src="legend/HortasemSoBernardodoCampo60_16.png" /> Hortas em São Bernardo do Campo [60]', layer: layer_HortasemSoBernardodoCampo60_16},
+            {label: '<img src="legend/HortasemSoCaetanodoSul20_15.png" /> Hortas em São Caetano do Sul [20]', layer: layer_HortasemSoCaetanodoSul20_15},
+            {label: '<img src="legend/HortasemDiadema80_14.png" /> Hortas em Diadema [80]', layer: layer_HortasemDiadema80_14},
+            {label: '<img src="legend/HortasemMau64_13.png" /> Hortas em Mauá [64]', layer: layer_HortasemMau64_13},
+            {label: '<img src="legend/HortasemRibeiroPires16_12.png" /> Hortas em Ribeirão Pires [16]', layer: layer_HortasemRibeiroPires16_12},
+            {label: '<img src="legend/HortasemRioGrandedaSerra19_11.png" /> Hortas em Rio Grande da Serra [19]', layer: layer_HortasemRioGrandedaSerra19_11},]},
+        {label: '<b>Camadas Auxiliares</b>', collapsed: true, selectAllCheckbox: true, children: [
+            {label: '<img src="legend/LimitesdosMunicpiosABCDMRR_10.png" /> Limites dos Municípios - ABCDMRR', layer: layer_LimitesdosMunicpiosABCDMRR_10},
+            {label: '<img src="legend/TerrasIndgenasnoestadodeSoPaulo_9.png" /> Terras Indígenas no estado de São Paulo', layer: layer_TerrasIndgenasnoestadodeSoPaulo_9},
+            {label: '<img src="legend/OleodutosRegABCDRMM_8.png" /> Oleodutos Reg. ABCDRMM', layer: layer_OleodutosRegABCDRMM_8},
+            {label: '<img src="legend/TorredeEnergiaRegABCDMRR_7.png" /> Torre de Energia Reg. ABCDMRR', layer: layer_TorredeEnergiaRegABCDMRR_7},
+            {label: '<img src="legend/LinhadeEnergiaRegABCDMRR_6.png" /> Linha de Energia Reg. ABCDMRR', layer: layer_LinhadeEnergiaRegABCDMRR_6},
+            {label: '<img src="legend/CinturoVerdedeSP_5.png" /> Cinturão Verde de SP', layer: layer_CinturoVerdedeSP_5},
+            {label: '<img src="legend/InventrioFlorestal2020_4.png" /> Inventário Florestal 2020', layer: layer_InventrioFlorestal2020_4},
+            {label: '<img src="legend/ReservatriosRMSP_3.png" /> Reservatórios - RMSP', layer: layer_ReservatriosRMSP_3},]},
         {label: '<b>Mapas Base</b>',  selectAllCheckbox: true, children: [
-            {label: "Positron (retina)", layer: layer_Positronretina_0, radioGroup: 'bm' },]},]
+            {label: "Positron (retina)", layer: layer_Positronretina_2, radioGroup: 'bm' },
+            {label: "OSM Standard", layer: layer_OSMStandard_1, radioGroup: 'bm' },
+            {label: "Google Satellite", layer: layer_GoogleSatellite_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -1490,27 +1516,27 @@
         });       
         setBounds();
         var i = 0;
-        layer_TerrasIndgenasnoestadodeSoPaulo_7.eachLayer(function(layer) {
+        layer_TerrasIndgenasnoestadodeSoPaulo_9.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['terrai_nome'] !== null?String('<div style="color: #323232; font-size: 7pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['terrai_nome']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_TerrasIndgenasnoestadodeSoPaulo_7'});
+            layer.bindTooltip((layer.feature.properties['terrai_nome'] !== null?String('<div style="color: #323232; font-size: 7pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['terrai_nome']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_TerrasIndgenasnoestadodeSoPaulo_9'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_7,layer_LimitesdosMunicpiosABCDMRR_8]);
+        resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_9,layer_LimitesdosMunicpiosABCDMRR_10]);
         map.on("zoomend", function(){
-            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_7,layer_LimitesdosMunicpiosABCDMRR_8]);
+            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_9,layer_LimitesdosMunicpiosABCDMRR_10]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_7,layer_LimitesdosMunicpiosABCDMRR_8]);
+            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_9,layer_LimitesdosMunicpiosABCDMRR_10]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_7,layer_LimitesdosMunicpiosABCDMRR_8]);
+            resetLabels([layer_TerrasIndgenasnoestadodeSoPaulo_9,layer_LimitesdosMunicpiosABCDMRR_10]);
         });
         </script>        
     </body>
